@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Game elements
+  
   const singlePlayerBtn = document.getElementById("singleplayer-btn");
   const multiplayerBtn = document.getElementById("multiplayer-btn");
   const singlePlayerMode = document.getElementById("single-player-mode");
@@ -10,14 +10,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const modal = document.getElementById("rules-modal");
   const closeModal = document.querySelector(".close");
 
-  // Score elements
   const playerScoreSpan = document.getElementById("player-score");
   const computerScoreSpan = document.getElementById("computer-score");
   const p1ScoreSpan = document.getElementById("p1-score");
   const p2ScoreSpan = document.getElementById("p2-score");
   const playerTurn = document.getElementById("player-turn");
 
-  // Game state
   let gameMode = "single";
   let playerScore = 0;
   let computerScore = 0;
@@ -26,7 +24,6 @@ document.addEventListener("DOMContentLoaded", () => {
   let currentPlayer = 1;
   let p1Choice = "";
 
-  // Mode switching
   singlePlayerBtn.addEventListener("click", () => {
     gameMode = "single";
     singlePlayerBtn.classList.add("active");
@@ -44,14 +41,10 @@ document.addEventListener("DOMContentLoaded", () => {
     singlePlayerMode.classList.remove("active");
     resetGame();
   });
-
-  // Computer's choice
   function getComputerChoice() {
     const choices = ["rock", "paper", "scissors"];
     return choices[Math.floor(Math.random() * 3)];
   }
-
-  // Determine winner
   function getWinner(choice1, choice2) {
     if (choice1 === choice2) return "draw";
 
@@ -64,8 +57,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     return "player2";
   }
-
-  // Handle choice selection
   document.querySelectorAll(".choice").forEach((choice) => {
     choice.addEventListener("click", () => {
       const playerChoice = choice.dataset.choice;
@@ -175,10 +166,8 @@ document.addEventListener("DOMContentLoaded", () => {
     enableChoices();
   }
 
-  // Reset button
   resetButton.addEventListener("click", resetGame);
 
-  // Rules modal
   rulesButton.addEventListener("click", () => {
     modal.style.display = "block";
   });
