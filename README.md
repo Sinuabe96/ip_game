@@ -1,6 +1,6 @@
 # rock Paper Scissor
 
-group 4
+free thinkers
 
 1. Kernemi Kidane                                         Ets0760/15
 2. Kaleb Dangachew                                        Ets0747/15
